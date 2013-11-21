@@ -24,7 +24,7 @@ plugin.enable = function()
 			
 			var newImage = document.createElementNS(XHTML_NS, "html:img");
 			newImage.setAttribute("src", matchText);
-			newImage.setAttribute("style", "max-width:200px;max-height:200px;");
+			newImage.setAttribute("style", "max-width:400px;max-height:400px;");
 			newLink.appendChild(newImage);
 			
 			var extraSpace = document.createElementNS(XHTML_NS, "html:span");
