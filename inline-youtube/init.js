@@ -14,9 +14,9 @@ plugin.init = function(glob)
 
 plugin.enable = function()
 {
-	client.munger.addRule("inline-youtube",  /(http:\/\/([a-z]{2,}\.|)youtube.com\/watch\?v=([A-Za-z0-9\-\_]{11}))/, function(matchText, containerTag, eventData){
+	client.munger.addRule("inline-youtube",  /(http(s|):\/\/([a-z]{2,}\.|)(youtube.com\/watch\?v=|youtu.be\/)([A-Za-z0-9\-\_]{11}))/, function(matchText, containerTag, eventData){
 		if(!("dontLogURLs" in eventData)){
-			var videoID = matchText.match(/watch\?v=([A-Za-z0-9\-\_]{11})/)[1];
+			var videoID = matchText.match(/([A-Za-z0-9\-\_]{11})/)[1];
 			
 			var newIframe = document.createElementNS(XHTML_NS, "html:iframe");
 			newIframe.setAttribute("src", "http://www.youtube.com/embed/" + videoID);
